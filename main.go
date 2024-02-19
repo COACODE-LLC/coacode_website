@@ -5,11 +5,14 @@ import (
   "text/template"
   "net/http"
   "log"
+  "github.com/savioxavier/termlink"
 )
 
 func main() {
   //server code here
-  fmt.Println("Initializing http server...")
+  fmt.Println("Initializing http server to...")
+  fmt.Println("Connected to:", termlink.Link("localhost:8080", "http://localhost:8080")) 
+
   
   //create defualtmux connections
   http.HandleFunc("/", homeHandler)
@@ -21,21 +24,21 @@ func main() {
 }
 
 
-func contactHandler(w http.ResponseWriter, r *http.Request) {
-  log.Println("Hello Contact")
-  renderTemplate(w, "html/contact.html")
-}
-
-
 func homeHandler(w http.ResponseWriter, r *http.Request) {
   log.Println("Hello Home")
-  renderTemplate(w, "html/index.html")
+  renderTemplate(w, "index.html")
 }
 
 
 func aboutHandler(w http.ResponseWriter, r *http.Request) {
   log.Println("Hello About")
-  renderTemplate(w, "html/about.html")
+  renderTemplate(w, "src/pages/about.html")
+}
+
+
+func contactHandler(w http.ResponseWriter, r *http.Request) {
+  log.Println("Hello Contact")
+  renderTemplate(w, "src/pages/contact.html")
 }
 
 
