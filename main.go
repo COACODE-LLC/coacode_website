@@ -13,6 +13,12 @@ func main() {
   fmt.Println("Initializing http server to...")
   fmt.Println("Connected to:", termlink.Link("localhost:8080", "http://localhost:8080")) 
 
+ // http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("src/assets"))))
+
+  // Serve static files from the "./src/assets" directory
+    http.HandleFunc("/assets/", func(w http.ResponseWriter, r *http.Request) {
+        http.ServeFile(w, r, "./src/assets/"+r.URL.Path[8:])
+    })
   
   //create defualtmux connections
   http.HandleFunc("/", homeHandler)
