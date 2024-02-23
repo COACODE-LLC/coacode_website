@@ -1,0 +1,47 @@
+
+.myDIV {
+    position: absolute;
+    top: 200px;
+    width: 300px;
+    height: 150px;
+    background-color: lightblue;
+    border: 1px solid black;
+    animation: mymove 2.5s 1;
+}
+
+.DIV2 {
+    position: absolute;
+    top: 180px;
+    left: 30px;
+    width: 300px;
+    height: 150px;
+    background-color: coral;
+    border: 1px solid black;
+}
+
+@keyframes mymove {
+    0% { opacity: 0; } /* Fade in instead of fade out */
+}
+
+.lTitle {
+    color: #3e2723;
+    font-size: 30px;
+    margin: auto;
+}
+
+.lWord1 {
+    font-family: monospace;
+    animation: mymove 2s 1;
+}
+
+.lWord2 {
+    font-family: monospace;
+    animation: mymove 2s 1;
+    animation-delay: 4s;
+}
+
+.lWord3 {
+    font-family: monospace;
+    animation: mymove 2s 1;
+    animation-delay: 6s;
+}
