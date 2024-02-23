@@ -1,22 +1,26 @@
-
-.myDIV {
-    position: absolute;
-    top: 200px;
-    width: 300px;
-    height: 150px;
-    background-color: lightblue;
-    border: 1px solid black;
-    animation: mymove 2.5s 1;
+.lBackground {
+    background-color: #BDE1F9;
+    background-image: url('/assets/choco.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
-.DIV2 {
-    position: absolute;
-    top: 180px;
-    left: 30px;
-    width: 300px;
-    height: 150px;
-    background-color: coral;
-    border: 1px solid black;
+.lNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+}
+
+.lLogo {
+    height: 70px;
+    width: 70px;
 }
 
 @keyframes fade-in {
