@@ -29,7 +29,9 @@
 }
 
 .lWord1, .lWord2, .lWord3 {
-    font-family: monospace;
+    color: #FFF;
+    font-size: 2.5vw;
+    margin: 2vw;
     opacity: 0; /* Initially transparent */
 }
 
