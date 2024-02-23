@@ -1,10 +1,24 @@
-.nav {
-  center center,
-  height: 10%,
+
+.myDIV {
+    position: absolute;
+    top: 200px;
+    width: 300px;
+    height: 150px;
+    background-color: lightblue;
+    border: 1px solid black;
+    animation: mymove 5s infinite;
 }
 
-.title {
-  color: #401801,
-  font-weight: bold,
-  font-size: 24px,
+.DIV2 {
+    position: absolute;
+    top: 180px;
+    left: 30px;
+    width: 300px;
+    height: 150px;
+    background-color: coral;
+    border: 1px solid black;
+}
+
+@keyframes mymove {
+    50% {opacity: 0;}
 }
