@@ -30,12 +30,15 @@ func main() {
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.URL.Path)
+	fmt.Println("home", r.URL.Path)
 	renderTemplate(w, "index.html")
 }
 
 func pageHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.URL.Path)
+	fmt.Println("page", r.URL.Path)
+	if r.URL.Path == "/favicon.ico" {
+		return
+	}
 	tmpl := "src/pages" + r.URL.Path + ".html"
 
 	renderTemplate(w, tmpl)

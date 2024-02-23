@@ -19,29 +19,29 @@
     border: 1px solid black;
 }
 
-@keyframes mymove {
-    0% { opacity: 0; } /* Fade in instead of fade out */
+@keyframes fade-in {
+    0% { opacity: 0; } /* Start with 0 opacity */
+    100% { opacity: 1; } /* End with 100% opacity */
 }
 
-.lTitle {
-    color: #3e2723;
-    font-size: 30px;
-    margin: auto;
+.lWord1, .lWord2, .lWord3 {
+    font-family: monospace;
+    opacity: 0; /* Initially transparent */
 }
 
 .lWord1 {
     font-family: monospace;
-    animation: mymove 2s 1;
+    animation: fade-in 1.5s forwards;
 }
 
 .lWord2 {
     font-family: monospace;
-    animation: mymove 2s 1;
-    animation-delay: 4s;
+    animation: fade-in 1.5s forwards;
+    animation-delay: .75s;
 }
 
 .lWord3 {
     font-family: monospace;
-    animation: mymove 2s 1;
-    animation-delay: 6s;
+    animation: fade-in 1.5s forwards;
+    animation-delay: 1.5s;
 }
