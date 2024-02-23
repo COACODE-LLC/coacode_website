@@ -20,19 +20,11 @@ func main() {
   //handle html template serving
   router.HandleFunc("/", homeHandler)
   router.HandleFunc("/{path}", pageHandler)
-
-  //handle static file serving
-  router.HandleFunc("/assets", assetHandler)
   
   //Create server on port :8080
   log.Fatal(http.ListenAndServe(":8080", router))
 }
 
-
-func assetHandler(w http.ResponseWriter, r *http.Request) {
-  //gets url path from r, searches for file in src/assets/
-  http.ServeFile(w, r, "./src/assets/"+r.URL.Path[8:])
-}
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
   fmt.Println(r.URL.Path)

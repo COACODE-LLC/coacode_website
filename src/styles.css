@@ -1,1 +1,10 @@
-css here
+.nav {
+  center center,
+  height: 10%,
+}
+
+.title {
+  color: #401801,
+  font-weight: bold,
+  font-size: 24px,
+}
