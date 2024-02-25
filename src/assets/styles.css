@@ -23,31 +23,49 @@
     width: 70px;
 }
 
+.lHeader {
+    background-color: rgb(255, 255, 255, 0.6);
+    width: 50%;
+    margin: auto;
+}
+
 @keyframes fade-in {
     0% { opacity: 0; } /* Start with 0 opacity */
     100% { opacity: 1; } /* End with 100% opacity */
 }
 
+@keyframes slide {
+  0% {
+    left: -50%; /* Start position: completely outside the container */
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .lWord1, .lWord2, .lWord3 {
-    color: #FFF;
+    color: #5D3954;
     font-size: 2.5vw;
     margin: 2vw;
+    left: 100%;
     opacity: 0; /* Initially transparent */
 }
 
 .lWord1 {
     font-family: monospace;
     animation: fade-in 1.5s forwards;
+    animation-delay: .75s;
 }
 
 .lWord2 {
     font-family: monospace;
     animation: fade-in 1.5s forwards;
-    animation-delay: .75s;
+    animation-delay: 1.5s;
 }
 
 .lWord3 {
     font-family: monospace;
     animation: fade-in 1.5s forwards;
-    animation-delay: 1.5s;
+    animation-delay: 2.25s;
 }
