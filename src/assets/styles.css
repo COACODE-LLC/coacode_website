@@ -1,6 +1,5 @@
 .lBackground {
     background-color: #BDE1F9;
-    background-image: url('/assets/choco.webp');
     background-repeat: no-repeat;
     background-position: center center;
     min-height: 100vh;
@@ -21,11 +20,20 @@
 .lLogo {
     height: 70px;
     width: 70px;
+    border-radius: 50%;
+}
+
+.lLogoText {
+    color: #5D3954;
+    font-size: calc(1rem + 1vw);
+    font-family: monospace;
+    margin: 2vw;
 }
 
 .lHeader {
-    background-color: rgb(255, 255, 255, 0.6);
-    width: 50%;
+    background-color: rgb(255, 255, 255, 1);
+    width: 100vw;
+    height: calc(1rem + 20vh);
     margin: auto;
 }
 
@@ -44,28 +52,43 @@
   }
 }
 
-.lWord1, .lWord2, .lWord3 {
+.lTitle {
     color: #5D3954;
-    font-size: 2.5vw;
+    font-size: calc(1rem + 5vw);
+    margin: auto;
+}
+
+.lWord0, .lWord1, .lWord2, .lWord3 {
+    color: #5D3954;
+    font-size: calc(1rem + 1vw);
+    font-family: monospace;
     margin: 2vw;
     left: 100%;
     opacity: 0; /* Initially transparent */
 }
 
+.lWord0 {
+    animation: fade-in 1s forwards;
+}
+
 .lWord1 {
-    font-family: monospace;
     animation: fade-in 1.5s forwards;
     animation-delay: .75s;
 }
 
 .lWord2 {
-    font-family: monospace;
     animation: fade-in 1.5s forwards;
     animation-delay: 1.5s;
 }
 
 .lWord3 {
-    font-family: monospace;
     animation: fade-in 1.5s forwards;
     animation-delay: 2.25s;
+}
+
+.lBodyText {
+    font-size: calc(1rem + 0.5vh);
+    color: #5D3954;
+    width: 75vw;
+    margin: auto;
 }

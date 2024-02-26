@@ -38,7 +38,7 @@ func main() {
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
   log.Println("home", r.URL.Path)
-  renderTemplate(w, "temp.html")
+  renderTemplate(w, "index.html")
 }
 
 func pageHandler(w http.ResponseWriter, r *http.Request) {
