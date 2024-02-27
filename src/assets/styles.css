@@ -1,22 +1,120 @@
-
-.myDIV {
-    position: absolute;
-    top: 200px;
-    width: 300px;
-    height: 150px;
-    background-color: lightblue;
-    border: 1px solid black;
-    animation: mymove 2.5s 1;
+.lBackground {
+    background-color: #BDE1F9;
+    min-height: 100vh;
 }
 
-.DIV2 {
-    position: absolute;
-    top: 180px;
-    left: 30px;
-    width: 300px;
-    height: 150px;
-    background-color: coral;
-    border: 1px solid black;
+.lNav {
+    display: flex;
+    height: 10vh;
+    width: 95vw;
+    justify-content: center;
+    margin: auto;
+}
+
+.lNavInternal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 85%;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lLogo {
+    display:flex;
+    align-items: center;
+    height: 90%;
+    border-radius: 50%;
+    margin-left: 1%;
+}
+
+.lLogoText {
+    color: #5D3954;
+    font-size: calc(1rem + 1vw);
+    font-family: monospace;
+    margin: 2vw;
+    text-decoration: none;
+}
+
+.lMainBody {
+    background-color: white;
+    width: 95%;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.lHeader {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: calc(1rem + 20vh);
+    margin: auto;
+}
+
+.lLink {
+    font-size: calc(1rem + .25vw);
+    color: #5D3954;
+    margin: auto;
+}
+
+.lLink:hover {
+    background-color: rgba(189, 225, 249, 0.6);
+    border-radius: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.lBodyTextContainer {
+    justify-content: center;
+    background-color: rgba(189, 255, 249, 0.5);
+    width: 80vw;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: auto;
+}
+
+.lBodyText {
+    width: 75vw;
+    font-size: calc(1rem + 0.25vw);
+    color: #5D3954;
+    margin: auto;
+}
+
+.lProfileContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80vw;
+    justify-content: center;
+}
+
+.lProfile {
+    flex: 1;
+    margin: 20px;
+    width: 40vw;
+    max-width: 500px;
+    min-width: 300px;
+    border: 1px solid rgba(189, 255, 249, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.lProfileImage {
+    display: block;
+    width: 90%;
+    max-width: 95%;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+.lProfileText {
+    display: block;
+    width: 95%;
+    margin: auto;
 }
 
 @keyframes fade-in {
@@ -24,24 +122,54 @@
     100% { opacity: 1; } /* End with 100% opacity */
 }
 
-.lWord1, .lWord2, .lWord3 {
+@keyframes slide {
+  0% {
+    left: -50%; /* Start position: completely outside the container */
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.lTitle {
+    color: #5D3954;
+    font-size: calc(1rem + 5vw);
+    margin: auto;
+}
+
+.lWord0, .lWord1, .lWord2, .lWord3 {
+    color: #5D3954;
+    font-size: calc(1rem + 1vw);
     font-family: monospace;
+    margin: 1vw;
     opacity: 0; /* Initially transparent */
 }
 
-.lWord1 {
-    font-family: monospace;
-    animation: fade-in 1.5s forwards;
+.lWord0 {
+    animation: fade-in 1s forwards;
 }
 
-.lWord2 {
-    font-family: monospace;
+.lWord1 {
     animation: fade-in 1.5s forwards;
     animation-delay: .75s;
 }
 
-.lWord3 {
-    font-family: monospace;
+.lWord2 {
     animation: fade-in 1.5s forwards;
     animation-delay: 1.5s;
+}
+
+.lWord3 {
+    animation: fade-in 1.5s forwards;
+    animation-delay: 2.25s;
+}
+
+.lButtonContainer {
+    padding: 3vh;
+    margin: auto;
+}
+
+.lButton {
+    margin: 0 2vw;
 }
