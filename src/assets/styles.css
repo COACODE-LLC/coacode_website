@@ -80,7 +80,7 @@
     width: 75vw;
     font-size: calc(1rem + 0.25vw);
     color: #5D3954;
-    margin: auto;
+    margin: 1vh auto;
 }
 
 .lProfileContainer {
