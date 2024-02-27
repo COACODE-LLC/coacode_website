@@ -31,27 +31,33 @@
       <!--HEADER START-->
         <header class ="lHeader">
           <div class="flex" style="margin: auto;">
-            <h1 class="cover-heading font-weight-bold lTitle">coacode</h1>
-            <div class="d-flex flex-row justify-content-around" style="width: 50%; margin: auto; padding-top: 1%">
-              <span class="font-weight-bold lWord1">Software</span>
-              <span class="font-weight-bold lWord2">Served</span>
-              <span class="font-weight-bold lWord3">Sweet.</span>
-            </div>
+            <h1 class="cover-heading font-weight-bold lTitle">Contact Us!</h1>
           </div>
         </header>
         <!--HEADER END -->
 
       <!--MAIN CONTENT START-->
         <main role="main" class="inner cover" style="padding-bottom: 5px">
+
           <div class="lBodyTextContainer">
-            <p class="lBodyText">Welcome to Coacode – your gateway to cutting-edge software solutions! With a team of seasoned experts, we specialize in Go, C++, C, Java, JavaScript, and TypeScript, covering everything from web and app development to robust backend solutions.</p>
-            <p class="lBodyText">At Coacode, we're not just developers; we're partners in progress. From concept to execution, we're committed to simplifying your digital journey with seamless user experiences and powerful backend development.</p>
-            <p class="lBodyText">Whether you're a small business owner or an aspiring entrepreneur, let Coacode transform your vision into reality. Join us and experience the difference of tailored software solutions designed with you in mind.</p>
+            <p class="lBodyText">Send us any questions or problems we can help you solve and we will get back to you as soon as possible! Alternatively, you can directly email us at ContactUs@Coacode.com</p>
           </div>
+
+          <form action="/submitform" method="post">
+            <label for="name">Name:</label><br>
+               <input type="text" id="name" name="name" required><br>
+                 
+            <label for="email">Email:</label><br>
+               <input type="email" id="email" name="email" required><br>
+                 
+            <label for="message">Message:</label><br>
+               <textarea id="message" name="message" rows="4" required></textarea><br>
+               <input type="submit" value="Submit">
+          </form>
 
           <div class="d-flex justify-content-center lButtonContainer">
             <a href="/about" class="btn btn-lg btn-primary lButton">Learn more</a>
-            <a href="/contact" class="btn btn-lg btn-primary lButton">Get in touch!</a>
+            <a href="/" class="btn btn-lg btn-primary lButton">Home Page</a>
           </div>
         </main>
       </div>

@@ -68,6 +68,7 @@
 }
 
 .lBodyTextContainer {
+    justify-content: center;
     background-color: rgba(189, 255, 249, 0.5);
     width: 80vw;
     border-radius: 20px;
@@ -79,6 +80,7 @@
     width: 75vw;
     font-size: calc(1rem + 0.25vw);
     color: #5D3954;
+    margin: auto;
 }
 
 .lProfileContainer {
