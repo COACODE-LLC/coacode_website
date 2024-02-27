@@ -14,48 +14,51 @@
     <div class="lBackground">
       
       <!-- NAV BEGIN -->
-      <div class="inner flex-column lNav">
-      <nav class="nav nav-masthead justify-content-between flex" style="margin: auto; width: 90%">
-        <a class="d-flex lLogo" href="/"><img src="/assets/choco.webp" class="lLogo">
-        <span class="lLogoText" style="margin:auto; padding-left: 1rem">Coacode</span></a>
-        <div class="d-flex flex-row align-items-center">
-          <a class="nav-link active" style="color: #5d3954" href="/">Home</a>
-          <a class="nav-link" style="color: #5d3954" href="/about">About</a>
-          <a class="nav-link" style= "color: #543954" href="/contact">Contact</a>
-        </div>
-      </nav>
+      <div class="lNav">
+        <nav class="nav nav-masthead lNavInternal">
+          <a class="lLogo" href="/"><img src="/assets/choco.webp" class="lLogo">
+          <span class="lLogoText">Coacode</span></a>
+          <div class="d-flex flex-row align-items-center" style="margin-right: 1%">
+            <a class="nav-link font-weight-bold lLink" href="#">Home</a>
+            <a class="nav-link lLink" href="/about">About</a>
+            <a class="nav-link lLink" style= "color: #543954" href="/contact">Contact</a>
+          </div>
+        </nav>
       </div>
       <!-- NAV END -->
-      <header class ="lHeader" style="height: 33vh; display: flex; align-content: center">
-        <!-- Title section -->
-        <div class="flex" style="margin: auto;">
-          <h1 class="cover-heading font-weight-bold lTitle">coacode</h1>
-          <div class="d-flex flex-row justify-content-around" style="width: 50%; margin: auto; padding-top: 1%">
-            <span class="font-weight-bold lWord1">Software</span>
-            <span class="font-weight-bold lWord2">Served</span>
-            <span class="font-weight-bold lWord3">Sweet.</span>
+
+      <div class="lMainBody">
+      <!--HEADER START-->
+        <header class ="lHeader">
+          <div class="flex" style="margin: auto;">
+            <h1 class="cover-heading font-weight-bold lTitle">coacode</h1>
+            <div class="d-flex flex-row justify-content-around" style="width: 50%; margin: auto; padding-top: 1%">
+              <span class="font-weight-bold lWord1">Software</span>
+              <span class="font-weight-bold lWord2">Served</span>
+              <span class="font-weight-bold lWord3">Sweet.</span>
+            </div>
           </div>
-        </div>
-        <!-- End Title Section -->
-        
-      </header>
+        </header>
+        <!--HEADER END -->
 
-      <main role="main" class="inner cover">
+      <!--MAIN CONTENT START-->
+        <main role="main" class="inner cover" style="padding-bottom: 5px">
+          <div class="lBodyTextContainer">
+            <p class="lBodyText">Welcome to Coacode – your gateway to cutting-edge software solutions! With a team of seasoned experts, we specialize in Go, C++, C, Java, JavaScript, and TypeScript, covering everything from web and app development to robust backend solutions.</p>
+            <p class="lBodyText">At Coacode, we're not just developers; we're partners in progress. From concept to execution, we're committed to simplifying your digital journey with seamless user experiences and powerful backend development.</p>
+            <p class="lBodyText">Whether you're a small business owner or an aspiring entrepreneur, let Coacode transform your vision into reality. Join us and experience the difference of tailored software solutions designed with you in mind.</p>
+          </div>
 
-
-        <p class="lBodyText">Welcome to Coacode – your gateway to cutting-edge software solutions! With a team of two seasoned experts, we specialize in Go, C++, C, Java, JavaScript, and TypeScript, covering everything from web and app development to robust backend solutions.</p>
-        <br>
-        <p class="lBodyText">At Coacode, we're not just developers; we're partners in progress. From concept to execution, we're committed to simplifying your digital journey with seamless user experiences and powerful backend development.</p>
-        <br>
-        <p class="lBodyText">Whether you're a small business owner or an aspiring entrepreneur, let Coacode transform your vision into reality. Join us and experience the difference of tailored software solutions designed with you in mind.</p>
-        <p class="lead">
-          <a href="/about" class="btn btn-lg btn-secondary">Learn more</a>
-        </p>
-      </main>
-
+          <div class="d-flex justify-content-center lButtonContainer">
+            <a href="/about" class="btn btn-lg btn-primary lButton">Learn more</a>
+            <a href="/contact" class="btn btn-lg btn-primary lButton">Get in touch!</a>
+          </div>
+        </main>
+      </div>
+      <!--MAIN CONTENT END-->
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+          <p>Designed by Coacode LLC</p>
         </div>
       </footer>
     </div>

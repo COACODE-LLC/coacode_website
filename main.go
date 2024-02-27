@@ -45,7 +45,7 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
   log.Println("page", r.URL.Path)
   path := r.URL.Path
   if path == "/favicon.ico" { 
-    http.ServeFile(w, r, path)
+    http.ServeFile(w, r, "favicon.ico")
     return
   }
 
