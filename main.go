@@ -7,6 +7,8 @@ import (
 	"text/template"
 	"fmt"
 
+	"func/mail"
+	
 	"github.com/gorilla/mux"
 	"github.com/savioxavier/termlink"
 )
@@ -87,16 +89,33 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
     // Get form values
   name := r.FormValue("name")
   email := r.FormValue("email")
+  subject := r.FormValue("subject")
   message := r.FormValue("message")
+
+  if name == "" || email == "" || message == "" {
+    //send error message:
+    w.Header().Set("Content-Type", "text/html")
+    fmt.Fprintf(w, `<script>alert("Please fill in all fields.");window.history.back();</script>`)
+    return
+  }
+
+  if err := mail.Mail(name, email, subject, message); err != nil {
+    w.Header().Set("Content-Type", "text/html")
+    fmt.Fprintf(w, `<script>alert("Please use a valid email address.");window.history.back();</script>`)
+    return
+  }
+  //mail.Test(name, email, subject, message)
 
   // Process form data (e.g., send email, store in database)
   // Example: Print form values
   log.Printf("Name: %s\n", name)
   log.Printf("Email: %s\n", email)
+  log.Printf("Subject: %s\n", subject)
   log.Printf("Message: %s\n", message)
 
   // Send response back to client
-  fmt.Fprintf(w, "Form submitted successfully!")
+  w.Header().Set("Content-Type", "text/html")
+  fmt.Fprintf(w, `<script>alert("Message sent successfully!");document.location.href="/";</script>`)
 }
 
 func getContentType(path string) string {
@@ -124,4 +143,3 @@ func check(err error, w http.ResponseWriter) {
     http.Error(w, err.Error(), http.StatusInternalServerError)
   }
 }
-
