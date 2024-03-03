@@ -8,7 +8,7 @@ import (
 	"fmt"
 
 	"func/mail"
-
+	
 	"github.com/gorilla/mux"
 	"github.com/savioxavier/termlink"
 )
@@ -99,7 +99,12 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
     return
   }
 
-  mail.Mail(name, email, message);
+  if err := mail.Mail(name, email, subject, message); err != nil {
+    w.Header().Set("Content-Type", "text/html")
+    fmt.Fprintf(w, `<script>alert("Please use a valid email address.");window.history.back();</script>`)
+    return
+  }
+  //mail.Test(name, email, subject, message)
 
   // Process form data (e.g., send email, store in database)
   // Example: Print form values

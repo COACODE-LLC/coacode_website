@@ -8,4 +8,6 @@ require (
 	github.com/savioxavier/termlink v1.3.0
 )
 
+require github.com/joho/godotenv v1.5.1 // indirect
+
 replace func/mail => ./src/scripts/mail/
