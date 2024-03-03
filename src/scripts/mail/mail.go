@@ -8,15 +8,6 @@ import (
   "github.com/joho/godotenv"
 )
 
-func Test(name, from, subject, message string) {
-  //testing env
-  err := godotenv.Load(".env")
-  if err != nil {
-    log.Println(err)
-  }
-  log.Println(os.Getenv("ENDPOINT"))
-}
-
 func Mail(name, from, subject, message string) error{
   err := godotenv.Load(".env")
   if err != nil {
