@@ -86,7 +86,7 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
     return
   }
 
-    // Get form values
+  // Get form values
   name := r.FormValue("name")
   email := r.FormValue("email")
   subject := r.FormValue("subject")
@@ -104,14 +104,6 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, `<script>alert("Please use a valid email address.");window.history.back();</script>`)
     return
   }
-  //mail.Test(name, email, subject, message)
-
-  // Process form data (e.g., send email, store in database)
-  // Example: Print form values
-  log.Printf("Name: %s\n", name)
-  log.Printf("Email: %s\n", email)
-  log.Printf("Subject: %s\n", subject)
-  log.Printf("Message: %s\n", message)
 
   // Send response back to client
   w.Header().Set("Content-Type", "text/html")
