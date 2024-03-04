@@ -22,7 +22,7 @@ var pageTemplates = map[string]string{
 func main() {
 	//server code here
 	log.Println("Initializing http server to...")
-	log.Println("Connected to:", termlink.Link("localhost:8080", "http://localhost:8080"))
+	log.Println("Connected to:", termlink.Link("localhost:80", "http://localhost:80"))
 
 	//create Gorilla router
 	router := mux.NewRouter()
@@ -35,8 +35,8 @@ func main() {
 	//handle asset serving
 	router.HandleFunc("/assets/{file}", assetHandler)
 
-	//Create server on port :8080
-	log.Fatal(http.ListenAndServe(":8080", router))
+	//Create server on port :80
+	log.Fatal(http.ListenAndServe(":80", router))
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
