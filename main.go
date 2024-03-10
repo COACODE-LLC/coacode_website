@@ -1,28 +1,28 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"path/filepath"
 	"text/template"
 
-	"func/mail"
+	"func/errorlog"
 
 	"github.com/gorilla/mux"
 	"github.com/savioxavier/termlink"
 )
 
 var pageTemplates = map[string]string{
-	"/":        "index.html",
-	"/about":   "src/pages/about.html",
-	"/contact": "src/pages/contact.html",
+	"/":					"index.html",
+	"/about":			"src/pages/about.html",
+	"/contact":		"src/pages/contact.html",
+	"/thankyou":	"src/pages/thankyou.html",
 }
 
 func main() {
 	//server code here
 	log.Println("Initializing http server to...")
-	log.Println("Connected to:", termlink.Link("localhost:80", "http://localhost:80"))
+	log.Println("Connected to:", termlink.Link("localhost:8080", "http://localhost:8080"))
 
 	//create Gorilla router
 	router := mux.NewRouter()
@@ -30,13 +30,13 @@ func main() {
 	//handle html template serving
 	router.HandleFunc("/", homeHandler)
 	router.HandleFunc("/{page}", pageHandler)
-	router.HandleFunc("/submitform", formHandler).Methods("POST")
 
 	//handle asset serving
 	router.HandleFunc("/assets/{file}", assetHandler)
 
 	//Create server on port :80
-	log.Fatal(http.ListenAndServe(":80", router))
+	log.Fatal(http.ListenAndServe(":8080", router))
+
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
@@ -49,11 +49,6 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Path
 	if path == "/favicon.ico" {
 		http.ServeFile(w, r, "favicon.ico")
-		return
-	}
-
-	if path == "/submitform" && r.Method == "POST" {
-		formHandler(w, r)
 		return
 	}
 
@@ -73,6 +68,7 @@ func assetHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, path)
 }
 
+/* Deprecated
 func formHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
@@ -102,6 +98,7 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 	if err := mail.Mail(name, email, subject, message); err != nil {
 		w.Header().Set("Content-Type", "text/html")
 		fmt.Fprintf(w, `<script>alert("Please use a valid email address.");window.history.back();</script>`)
+		check(err, w)
 		return
 	}
 
@@ -109,6 +106,7 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 	fmt.Fprintf(w, `<script>alert("Message sent successfully!");document.location.href="/";</script>`)
 }
+*/
 
 func getContentType(path string) string {
 	switch filepath.Ext(path) {
@@ -139,5 +137,6 @@ func renderTemplate(w http.ResponseWriter, tmpl string) {
 func check(err error, w http.ResponseWriter) {
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
+		errorlog.LogError(err)	
 	}
 }

@@ -18,7 +18,7 @@
         <nav class="nav nav-masthead lNavInternal">
           <a class="lLogo" href="/"><img src="/assets/choco.webp" class="lLogo">
           <span class="lLogoText">Coacode</span></a>
-          <div class="d-flex flex-row align-items-center" style="margin-right: 1%">
+          <div class="d-flex flex-row align-items-center">
             <a class="nav-link lLink" href="/">Home</a>
             <a class="nav-link lLink" href="/about">About</a>
             <a class="nav-link font-weight-bold lLink" href="#">Contact</a>
@@ -43,80 +43,45 @@
             <p class="lBodyText">Get in touch with us at Coacode! Whether you have questions, feedback, or need assistance, we're here to help. Simply fill out the form below, and we'll get back to you promptly. Alternatively, you can reach out to us directly via email at ContactUs@Coacode.com. We look forward to hearing from you and assisting with your software needs!</p>
           </div>
 
-          <!--form start -->
-          <!--Section: Contact v.2-->
-          <section class="m-5">
 
-              <!--Section heading-->
-              <div class="justify-content-center">
 
-                  <!--Grid column-->
-                  <div class="col-md-9 mb-md-0 mb-5" style="margin: auto;">
-                      <form id="contact-form" name="contact-form" action="submitform" method="POST">
-
-                          <!--Grid row-->
-                          <div class="row">
-
-                              <!--Grid column-->
-                              <div class="col-md-6">
-                                  <div class="md-form mb-0">
-                                      <input type="text" id="name" name="name" class="form-control" required>
-                                      <label for="name" class="">Your name</label>
-                                  </div>
-                              </div>
-                              <!--Grid column-->
-
-                              <!--Grid column-->
-                              <div class="col-md-6">
-                                  <div class="md-form mb-0">
-                                      <input type="text" id="email" name="email" class="form-control">
-                                      <label for="email" class="">Your email</label>
-                                  </div>
-                              </div>
-                              <!--Grid column-->
-
+          <section class="container justify-content-center">
+              <form action="https://formsubmit.co/contactus@coacode.com" class="justify-content-center" method="POST">
+                  <input type="hidden" name="_cc" value="steven@coacode.com,naddie@coacode.com">
+                  <input type="hidden" name="_next" value="http://localhost:8080/thankyou">
+                  <input type="text" name="_honey" style="display:none">
+          
+                  <div class="row m-3">
+                      <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <input type="text" name="name" class="form-control" placeholder="Your name" required>
                           </div>
-                          <!--Grid row-->
-
-                          <!--Grid row-->
-                          <div class="row">
-                              <div class="col-md-12">
-                                  <div class="md-form mb-0">
-                                      <input type="text" id="subject" name="subject" class="form-control">
-                                      <label for="subject" class="">Subject</label>
-                                  </div>
-                              </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <input type="text" name="_subject" class="form-control" placeholder="Subject" required>
                           </div>
-                          <!--Grid row-->
-
-                          <!--Grid row-->
-                          <div class="row">
-
-                              <!--Grid column-->
-                              <div class="col-md-12">
-
-                                  <div class="md-form">
-                                      <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                      <label for="message">Your message</label>
-                                  </div>
-
-                              </div>
-                          </div>
-                          <!--Grid row-->
-
-                      </form>
-
-                      <div class="d-flex text-center text-md-left justify-content-center" style="margin: auto">
-                          <a class="btn btn-lg btn-outline-success" style="width: 15vw" onclick="document.getElementById('contact-form').submit();">Send</a>
                       </div>
                   </div>
-                  <!--Grid column-->
+          
+                  <div class="col-md-12 mb-md-0">
+                      <div class="md-form mb-0 m-3">
+                          <input name="email" class="form-control" placeholder="Your email address" required></input>
+                      </div>
+                  </div>
 
-
-              </div>
-
+                  <div class="col-md-12 mb-md-0">
+                      <div class="md-form mb-0 m-3">
+                          <textarea name="message" class="form-control" placeholder="Your Message" rows="10" required></textarea>
+                      </div>
+                  </div>
+          
+                  <div class="d-flex text-center text-md-left justify-content-center mt-3" style="margin: auto">
+                      <button class="btn btn-lg btn-outline-success lButton" type="submit">Send</button>
+                  </div>
+              </form>
           </section>
-        <!--Section: Contact v.2-->
+
 
 
           <div class="d-flex justify-content-center lButtonContainer">

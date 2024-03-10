@@ -13,29 +13,31 @@
 
 .lNavInternal {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     height: 85%;
     width: 100%;
-    margin: auto;
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    margin-top: 5px;
 }
 
 .lLogo {
     display:flex;
     align-items: center;
-    height: 90%;
+    height: 85%;
     border-radius: 50%;
-    margin-left: 1%;
+    margin-left: 1vw;
 }
 
 .lLogoText {
     color: #5D3954;
-    font-size: calc(1rem + 1vw);
-    font-family: monospace;
-    margin: 2vw;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1vw;
     text-decoration: none;
 }
 
@@ -56,9 +58,10 @@
 }
 
 .lLink {
-    font-size: calc(1rem + .25vw);
+    font-size: .75rem;
     color: #5D3954;
     margin: auto;
+    white-space: nowrap;
 }
 
 .lLink:hover {
